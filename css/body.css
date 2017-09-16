@@ -13,10 +13,23 @@ a:hover{
 li{
 	list-style: none;
 }
+.clearfix:after{
+	display: table;
+	content: " ";
+	clear: both;
+}
+.clearfix{
+	*zoom: 1;
+}
+body{
+	font: 12px "微软雅黑" arial;
+	color: #555;
+}
 .top-nav{
 	height: 30px;
 	margin: 0 auto;
-	background-color: #f4f4f4;
+	/*background-color: #f4f4f4;*/
+	background: linear-gradient(to bottom,rgba(244,156,210,.4),white);
 	font-size: 14px;
 	color: gray;
 }
@@ -194,8 +207,13 @@ li{
 }
 #mianbody .bodyhead ul li a:hover{
 	color: red;	
+	font-style:oblique;
+	font-size: 28px;
 }
+
 .first-screen{
+	width: 1528px;
+	margin: 0 auto;
 	height: 400px;
 	position: relative;
 	background-color:#fffde6 ;
@@ -208,6 +226,17 @@ li{
 	position: absolute;
 	color: white;
 	left: 120px;
+}
+.first-screen .body-list ul li:hover{
+	/*background-color: blue;*/
+	
+	background-color: rgba(0,255,0,.5);
+}
+.first-screen .body-list ul li:hover a,.first-screen .body-list ul li:hover span{
+	display: inline-block;
+}
+.first-screen .body-list ul li:hover a,.first-screen .body-list ul li:hover img,.first-screen .body-list ul li:hover span{
+	transform: translate(15px,0);
 }
 .first-screen .body-list img{
 	margin-left: 15px;
@@ -231,8 +260,8 @@ li{
 	animation:spread 10s linear infinite;
 }
 .float  img:hover{
-				transform: rotate(300deg) scale(1.5);
-				transition: all 5s;
+				/*transform: rotate(300deg) scale(1.5);*/
+				/*transition: all 5s;*/
 				animation-play-state: paused;			
 			}
 @keyframes spread{
@@ -240,17 +269,17 @@ li{
 					transform:translate(0,0) ;
 				}
 				25%{
-					transform: translate(580px,0);
+					transform: translate(580px,0) /*rotate(90deg)*/;
 					
 				}
 				50%{
-					transform: translate(0,250px);
+					transform: translate(0,250px) /*rotate(180deg)*/;
 				}
 				75%{
-					transform: translate(580px,250px);
+					transform: translate(580px,250px) /*rotate(270deg)*/;
 				}
 				100%{
-					transform: translate(0,0);
+					transform: translate(0,0) /*rotate(360deg)*/;
 				}
 			}
 .first-screen .first-screen-img .img1{
@@ -385,6 +414,8 @@ li{
 }
 
 .hot{
+	width: 1528px;
+	margin:0 auto;
 	height: 150px;
 	position: relative;
 	margin-top:20px;
@@ -426,10 +457,31 @@ li{
 	position: relative;
 	top:-28px;
 }
-.hot .hot-list ul li div{
+.hot .hot-list ul li div:first-child{
 	width: 100px;
 	float: left;
 }
+.hot .hot-list ul li .hot-style{
+	display: block;
+	width: 40px;
+	height: 40px;
+	border-radius: 40px;
+    background-color: orangered;
+    border:1px solid red;
+    line-height: 40px;
+    text-align: center;
+	color: white;
+	position: absolute;
+	/*left: 10px;*/
+	/*top:20px;*/
+	/*animation: big 1s linear infinite;*/
+}
+@keyframes big{
+	0%{transform: scale(1);}
+	50%{transform:translate(10px,-10px) scale(1.2);}
+	100%{transform: scale(1);}
+}
+
 .hot .hot-list ul li p:first-child{
 	overflow: hidden;
 	height: 40px;
@@ -442,11 +494,12 @@ li{
 	line-height: 20px;
 	margin-top: 15px;
 	margin-left: 5px;
+	font-size: 14px;
 	color: red;
 	}
 .hot .hot-list ul li p:nth-child(3){
 	line-height: 15px;
-	margin-top: 10px;
+	margin-top: 35px;
 	margin-left: 5px;
 	color: gray;
 	font-size: 12px;
@@ -528,11 +581,14 @@ li{
 				font-size: 14px;
 				background: #e06718 url(//img.alicdn.com/tfs/TB1GYtrKpXXXXaVXXXXXXXXXXXX-221-82.png) 1px 0 no-repeat;
 			}
-			li:hover .item-more{
+			.ul1 li:hover .item-more{
 				display: inline-block;
 			}
-			li:hover img{
-				border: 1px solid red;
+			.ul1 li:hover img{
+				border-radius: 100px;
+				transform: rotate(720deg);
+				transition: all 1s ease-out .2s;
+				/*border: 1px solid red;*/
 			}
 			#youlove{
 				width: 900px;
@@ -574,11 +630,17 @@ li{
 			 color: #fff;
 			 background-color: #f40;
 			}
+			.usually:hover{
+				border-radius:25px;
+				transform: scale(1.5);
+			}
 			.fashion{
 				color: #f05;
 		
 			}
 			.fashion:hover {
+				border-radius:25px;
+				transform: scale(1.5);
 				color: white;
 				background-color:#f40 ;			
 				}
@@ -587,6 +649,8 @@ li{
 			
 			}
 			.quality:hover{
+				border-radius:25px;
+				transform: scale(1.5);
 				color: white;
 				background-color: #8d7afb;
 			}
@@ -595,6 +659,8 @@ li{
 			
 			}
 			.features:hover{
+				border-radius:25px;
+				transform: scale(1.5);
 				color: white;
 				background-color: #a8c001;
 			}
@@ -603,6 +669,8 @@ li{
 				color: #a2745b;
 			}
 			.affordable:hover{
+				border-radius:25px;
+				transform: scale(1.5);
 				background-color: #a2745b;
 				color: white;
 			}
@@ -610,6 +678,8 @@ li{
 				color: #f40;
 			}
 			.like:hover{
+				border-radius:25px;
+				transform: scale(1.5);
 				background-color: #f40;
 				color: white;
 			}
@@ -618,6 +688,8 @@ li{
 				color:#8d7afb ;
 			}
 			.totop:hover{
+				border-radius:25px;
+				transform: scale(1.5);
 				background-color: #8d7afb;
 				color: white;
 			}
@@ -626,6 +698,8 @@ li{
 				border-bottom: 1px solid gainsboro;
 			}
 			.feedbook:hover{
+				border-radius:25px;
+				transform: scale(1.5);
 				background-color: #a8c001;
 				color: white;
 			}
